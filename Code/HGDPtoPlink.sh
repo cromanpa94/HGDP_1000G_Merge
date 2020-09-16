@@ -4,7 +4,7 @@ cd ../DataBases/HGDP
 dos2unix HGDP_FinalReport_Forward.txt
 dos2unix HGDP_Map.txt
 dos2unix SampleInformation.txt
-head --lines=1 HGDP_FinalReport_Forward.txt > header.txt
+head -n 1 HGDP_FinalReport_Forward.txt > header.txt
 awk '{for (i=1;i<=NF;i++) print "0",$i,"0","0"}' header.txt > hgdp_nosex.tfam
 sed '1d' HGDP_FinalReport_Forward.txt > HGDP_Data_NoHeader.txt
 sort -k 1b,1 HGDP_Data_NoHeader.txt > HGDP_Data_Sorted.txt
